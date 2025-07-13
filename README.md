@@ -1,4 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🩺 TippyTippy: An Open Source Medical Journal
+
+**TippyTippy** is a thoughtfully designed medical journal and healthcare assistant built with **Next.js**, **TypeScript**, and **Chakra UI**. It aims to simplify personal health tracking by providing tools for journaling symptoms, setting medication reminders, and managing appointments—all with a focus on accessibility and intuitive design.
+
+## 🚀 Features
+
+- 📓 **Medical Journal**: Log health events, symptoms, and notes in a secure and organized format.
+- 💊 **Medication Reminders**: Set recurring reminders with dosage instructions and scheduling.
+- 📅 **Appointment Calendar**: Add, update, and track upcoming medical appointments.
+
+## 🛠️ Tech Stack
+
+- **Frontend**: [Next.js](https://nextjs.org/) + [TypeScript](https://www.typescriptlang.org/)  
+- **UI Framework**: [Chakra UI](https://chakra-ui.com/)  
+- **State Management**: React Context / Redux (TBD)
+
+## 📈 Roadmap
+
+We're actively developing the following features:
+
+- [ ] Calendar Integration (Google Calendar / ICS support)
+- [ ] Appointment creation and management
+- [ ] Medication reminders with customizable schedules
+- [ ] Notification support (Local + Push)
+- [ ] Cloud sync via secure backend (e.g., Firebase, Supabase)
+
+## 🧪 Contributing
+
+We welcome contributions from developers, designers, healthcare professionals, and accessibility advocates! If you’d like to collaborate:
+
+1. Fork the repository
+2. Clone your fork
+3. Create a new branch: `git checkout -b feature/your-feature-name`
+4. Submit a pull request!
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## 🙌 Acknowledgements
+
+TippyTippy was born from a personal need to support my loved ones—my parent and pregnant wife—during times when remembering medical appointments and timely medication became a challenge. This project is a reflection of that experience, blending empathy with technology to create a tool that offers clarity, care, and reliability in day-to-day healthcare tracking.
+
+Created with ❤️ by [Dakshim Chhabra](https://github.com/dakshim).
+
+
+---
 
 ## Getting Started
 
@@ -31,7 +77,6 @@ To learn more about Next.js, take a look at the following resources:
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
