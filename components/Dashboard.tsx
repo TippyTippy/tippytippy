@@ -14,7 +14,7 @@ import { UserData, AuthData } from '@/shared/types';
 
 export type Screen = 'loading' | 'register-details' | 'register-pin' | 'confirm-pin' | 'login' | 'dashboard';
 
-const MobileDashboard: React.FC = () => {
+const Dashboard: React.FC = () => {
   const [currentScreen, setCurrentScreen] = useState<Screen>('loading');
   const [userData, setUserData] = useState<UserData | null>(null);
   const [tempUserData, setTempUserData] = useState<{ firstName: string; lastName: string; pin: string }>({
@@ -178,14 +178,14 @@ const MobileDashboard: React.FC = () => {
   };
 
   return (
-    <Container maxW="sm" py={8} px={4}>
+    <Container py={8} px={4} display="flex" alignItems="center" justifyContent="center">
       <Box
         minH="100vh"
         display="flex"
         alignItems="center"
         justifyContent="center"
       >
-        <Card.Root w="100%" maxW="400px" p={6} shadow="lg">
+        <Card.Root w="100%"  p={6} shadow="lg">
           <Card.Body>
             {renderScreen()}
           </Card.Body>
@@ -196,4 +196,4 @@ const MobileDashboard: React.FC = () => {
 };
 
 
-export default MobileDashboard;
+export default Dashboard;
