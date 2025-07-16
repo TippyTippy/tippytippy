@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Box, Card, CardBody } from '@chakra-ui/react';
+import React, { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent } from "@/components/ui/card";
 
 export const RegisterPinScreen: React.FC<{
   onContinue: (pin: string) => void;
@@ -37,58 +39,47 @@ export const RegisterPinScreen: React.FC<{
   };
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h2 style={{ fontSize: '1.5rem', color: '#4a5568', marginBottom: '1rem' }}>
-        Set up your 4-digit PIN
-      </h2>
-      
-      <p style={{ color: '#718096', marginBottom: '2rem' }}>
-        Choose a secure 4-digit PIN for your account
-      </p>
-
-      <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', marginBottom: '1rem' }}>
-        {pin.map((digit, index) => (
-          <input
-            key={index}
-            id={`pin-${index}`}
-            type="number"
-            value={digit}
-            onChange={(e) => handlePinChange(index, e.target.value)}
-            style={{
-              width: '3rem',
-              height: '3rem',
-              textAlign: 'center',
-              fontSize: '1.5rem',
-              border: error ? '2px solid #e53e3e' : '1px solid #e2e8f0',
-              borderRadius: '0.375rem'
-            }}
-            maxLength={1}
-          />
-        ))}
-      </div>
-
-      {error && (
-        <p style={{ color: '#e53e3e', fontSize: '0.875rem', marginBottom: '1rem' }}>
-          {error}
+    <Card className="w-full max-w-md mx-auto">
+      <CardContent className="pt-6 text-center">
+        <h2 className="text-2xl font-semibold text-muted-foreground mb-4">
+          Set up your 4-digit PIN
+        </h2>
+        
+        <p className="text-muted-foreground mb-8">
+          Choose a secure 4-digit PIN for your account
         </p>
-      )}
 
-      <button
-        onClick={handleSubmit}
-        disabled={isLoading}
-        style={{
-          width: '100%',
-          padding: '0.75rem',
-          backgroundColor: isLoading ? '#a0aec0' : '#3182ce',
-          color: 'white',
-          border: 'none',
-          borderRadius: '0.375rem',
-          fontSize: '1rem',
-          cursor: isLoading ? 'not-allowed' : 'pointer'
-        }}
-      >
-        {isLoading ? 'Processing...' : 'Continue'}
-      </button>
-    </div>
+        <div className="flex gap-2 justify-center mb-4">
+          {pin.map((digit, index) => (
+            <Input
+              key={index}
+              id={`pin-${index}`}
+              type="number"
+              value={digit}
+              onChange={(e) => handlePinChange(index, e.target.value)}
+              className={`w-12 h-12 text-center text-xl ${
+                error ? 'border-destructive' : ''
+              }`}
+              maxLength={1}
+            />
+          ))}
+        </div>
+
+        {error && (
+          <p className="text-destructive text-sm mb-4">
+            {error}
+          </p>
+        )}
+
+        <Button
+          className="w-full"
+          onClick={handleSubmit}
+          disabled={isLoading}
+          variant="default"
+        >
+          {isLoading ? 'Processing...' : 'Continue'}
+        </Button>
+      </CardContent>
+    </Card>
   );
 };

@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Box, Card } from '@chakra-ui/react';
+import { Card, CardContent } from '@/components/ui/card';
 import { LoadingScreen } from '@/components/LoadingScreen';
 import { RegisterDetailsScreen } from '@/components/RegisterDetailsScreen';
 import { RegisterPinScreen } from '@/components/RegisterPinScreen';
 import { ConfirmPinScreen } from '@/components/ConfirmPinScreen';
 import { LoginScreen } from '@/components/LoginScreen';
-import { DashboardScreen } from '@/components/DashboardScreen';
+import DashboardScreen from '@/components/DashboardScreen';
 import { DatabaseService } from '@/services/DatabaseService';
 import { AuthService } from '@/services/AuthService';
 import { UserData, AuthData } from '@/shared/types';
-
-
 
 export type Screen = 'loading' | 'register-details' | 'register-pin' | 'confirm-pin' | 'login' | 'dashboard';
 
@@ -178,22 +176,12 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <Container py={8} px={4} display="flex" alignItems="center" justifyContent="center">
-      <Box
-        minH="100vh"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-      >
-        <Card.Root w="100%"  p={6} shadow="lg">
-          <Card.Body>
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+      <div className="w-full max-w-md">
             {renderScreen()}
-          </Card.Body>
-        </Card.Root>
-      </Box>
-    </Container>
+      </div>
+    </div>
   );
 };
-
 
 export default Dashboard;

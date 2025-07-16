@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Box, Card, CardBody } from '@chakra-ui/react';
-
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Card, CardContent } from '@/components/ui/card';
 
 export const ConfirmPinScreen: React.FC<{
   onConfirm: (pin: string) => Promise<void>;
@@ -15,7 +16,7 @@ export const ConfirmPinScreen: React.FC<{
       newPin[index] = value;
       setPin(newPin);
       setError('');
-
+      
       if (value && index < 3) {
         const nextInput = document.getElementById(`confirm-pin-${index + 1}`);
         nextInput?.focus();
@@ -29,7 +30,7 @@ export const ConfirmPinScreen: React.FC<{
       setError('PIN must be 4 digits');
       return;
     }
-
+    
     setIsLoading(true);
     try {
       await onConfirm(pinValue);
@@ -41,58 +42,51 @@ export const ConfirmPinScreen: React.FC<{
   };
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h2 style={{ fontSize: '1.5rem', color: '#4a5568', marginBottom: '1rem' }}>
-        Confirm your PIN
-      </h2>
-      
-      <p style={{ color: '#718096', marginBottom: '2rem' }}>
-        Please enter your PIN again to confirm
-      </p>
+    <div className="max-w-md mx-auto p-6">
+      <Card>
+        <CardContent className="pt-6">
+          <div className="text-center">
+            <h2 className="text-2xl text-gray-600 mb-4 font-medium">
+              Confirm your PIN
+            </h2>
+           
+            <p className="text-gray-500 mb-8">
+              Please enter your PIN again to confirm
+            </p>
 
-      <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', marginBottom: '1rem' }}>
-        {pin.map((digit, index) => (
-          <input
-            key={index}
-            id={`confirm-pin-${index}`}
-            type="number"
-            value={digit}
-            onChange={(e) => handlePinChange(index, e.target.value)}
-            style={{
-              width: '3rem',
-              height: '3rem',
-              textAlign: 'center',
-              fontSize: '1.5rem',
-              border: error ? '2px solid #e53e3e' : '1px solid #e2e8f0',
-              borderRadius: '0.375rem'
-            }}
-            maxLength={1}
-          />
-        ))}
-      </div>
+            <div className="flex gap-2 justify-center mb-4">
+              {pin.map((digit, index) => (
+                <Input
+                  key={index}
+                  id={`confirm-pin-${index}`}
+                  type="number"
+                  value={digit}
+                  onChange={(e) => handlePinChange(index, e.target.value)}
+                  className={`w-12 h-12 text-center text-2xl ${
+                    error ? 'border-red-500 border-2' : ''
+                  }`}
+                  maxLength={1}
+                />
+              ))}
+            </div>
 
-      {error && (
-        <p style={{ color: '#e53e3e', fontSize: '0.875rem', marginBottom: '1rem' }}>
-          {error}
-        </p>
-      )}
+            {error && (
+              <p className="text-red-500 text-sm mb-4">
+                {error}
+              </p>
+            )}
 
-      <button
-        onClick={handleSubmit}
-        disabled={isLoading}
-        style={{
-          width: '100%',
-          padding: '0.75rem',
-          backgroundColor: isLoading ? '#a0aec0' : '#3182ce',
-          color: 'white',
-          border: 'none',
-          borderRadius: '0.375rem',
-          fontSize: '1rem',
-          cursor: isLoading ? 'not-allowed' : 'pointer'
-        }}
-      >
-        {isLoading ? 'Creating Account...' : 'Create Account'}
-      </button>
+            <Button
+              onClick={handleSubmit}
+              disabled={isLoading}
+              className="w-full"
+              size="lg"
+            >
+              {isLoading ? 'Creating Account...' : 'Create Account'}
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 };

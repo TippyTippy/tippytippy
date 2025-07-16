@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { ThemeProvider } from "@/components/ui/theme-provider"
 import { wrapper } from "@/utils/store";
 import { Provider } from "react-redux";
 
@@ -10,9 +9,7 @@ export default function App({ Component,  ...rest }: AppProps) {
 
   return (
     <Provider store={store}>
-      <ThemeProvider>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <Component {...pageProps} />
     </Provider>
   );
 }

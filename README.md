@@ -1,6 +1,6 @@
 # 🩺 TippyTippy: An Open Source Medical Journal
 
-**TippyTippy** is a thoughtfully designed medical journal and healthcare assistant built with **Next.js**, **TypeScript**, and **Chakra UI**. It aims to simplify personal health tracking by providing tools for journaling symptoms, setting medication reminders, and managing appointments—all with a focus on accessibility and intuitive design.
+**TippyTippy** is a thoughtfully designed medical journal and healthcare assistant built with **Next.js**, **TypeScript**, and **shadcn/ui**. It aims to simplify personal health tracking by providing tools for journaling symptoms, setting medication reminders, and managing appointments—all with a focus on accessibility and intuitive design.
 
 ## 🚀 Features
 
@@ -10,19 +10,20 @@
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: [Next.js](https://nextjs.org/) + [TypeScript](https://www.typescriptlang.org/)  
-- **UI Framework**: [Chakra UI](https://chakra-ui.com/)  
-- **State Management**: React Context / Redux (TBD)
+- **Frontend**: [Next.js](https://nextjs.org/) + [TypeScript](https://www.typescriptlang.org/)
+- **UI Framework**: [shadcn/ui](https://ui.shadcn.com/) - beautifully designed components built with Radix UI and Tailwind CSS
+- **State Management**: [Redux Toolkit](https://redux-toolkit.js.org/) - Official Redux toolset for efficient state management
+- **Database**: [Supabase](https://supabase.com/) + [PostgreSQL](https://www.postgresql.org/) - Open source Firebase alternative with powerful SQL database
 
 ## 📈 Roadmap
 
 We're actively developing the following features:
 
-- [ ] Calendar Integration (Google Calendar / ICS support)
-- [ ] Appointment creation and management
+- [ ] Calendar (Calendar)
+- [ ] Appointment management
 - [ ] Medication reminders with customizable schedules
 - [ ] Notification support (Local + Push)
-- [ ] Cloud sync via secure backend (e.g., Firebase, Supabase)
+- [ ] Cloud sync via secure backend (e.g., Supabase)
 
 ## 🧪 Contributing
 
@@ -39,10 +40,9 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 🙌 Acknowledgements
 
-TippyTippy was born from a personal need to support my loved ones—my parent and pregnant wife—during times when remembering medical appointments and timely medication became a challenge. This project is a reflection of that experience, blending empathy with technology to create a tool that offers clarity, care, and reliability in day-to-day healthcare tracking.
+TippyTippy was born from a personal need to support my loved ones—my parent during times when remembering medical appointments and timely medication became a challenge. This project is a reflection of that experience, blending empathy with technology to create a tool that offers clarity, care, and reliability in day-to-day healthcare tracking.
 
 Created with ❤️ by [Dakshim Chhabra](https://github.com/dakshim).
-
 
 ---
 
@@ -76,7 +76,6 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
 
 ## Deploy on Vercel
 
