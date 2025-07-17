@@ -109,7 +109,7 @@ const Dashboard: React.FC = () => {
         setUserData(updatedUser);
         setCurrentScreen('dashboard');
       } else {
-        throw new Error('Invalid PIN');
+        //throw new Error('Invalid PIN');
       }
     } catch (error) {
       console.error('Login failed:', error);

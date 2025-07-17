@@ -60,7 +60,7 @@ export const LoginScreen: React.FC<{
                 <Input
                   key={index}
                   id={`login-pin-${index}`}
-                  type="number"
+                  type="password"
                   value={digit}
                   onChange={(e) => handlePinChange(index, e.target.value)}
                   className={`w-12 h-12 text-center text-2xl ${

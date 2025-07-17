@@ -54,7 +54,7 @@ export const RegisterPinScreen: React.FC<{
             <Input
               key={index}
               id={`pin-${index}`}
-              type="number"
+              type="password"
               value={digit}
               onChange={(e) => handlePinChange(index, e.target.value)}
               className={`w-12 h-12 text-center text-xl ${

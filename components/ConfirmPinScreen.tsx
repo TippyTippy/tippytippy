@@ -59,7 +59,7 @@ export const ConfirmPinScreen: React.FC<{
                 <Input
                   key={index}
                   id={`confirm-pin-${index}`}
-                  type="number"
+                  type="password"
                   value={digit}
                   onChange={(e) => handlePinChange(index, e.target.value)}
                   className={`w-12 h-12 text-center text-2xl ${
